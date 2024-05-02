@@ -78,39 +78,39 @@ char* NetworkAnalysis::getNetworkStatus(char* inputFilePath) {
 }
 
 
-int main() {
-    try {
-        const char* inputFilePaths[] = {
-            "../sample_inputs/1_sample.txt",
-            "../sample_inputs/2_sample.txt",
-            "../sample_inputs/3_sample.txt"
-        };
-        const char* outputFilePaths[] = {
-            "../output1.txt",
-            "../output2.txt",
-            "../output3.txt"
-        };
-        const char* expectedAnswers[] = {"NO", "YES", "NO"};
+// int main() {
+//     try {
+//         const char* inputFilePaths[] = {
+//             "../sample_inputs/1_sample.txt",
+//             "../sample_inputs/2_sample.txt",
+//             "../sample_inputs/3_sample.txt"
+//         };
+//         const char* outputFilePaths[] = {
+//             "../output1.txt",
+//             "../output2.txt",
+//             "../output3.txt"
+//         };
+//         const char* expectedAnswers[] = {"NO", "YES", "NO"};
 
-        for (int i = 0; i < 3; ++i) {
-            const char* networkStatus = NetworkAnalysis::getNetworkStatus(const_cast<char*>(inputFilePaths[i]));
+//         for (int i = 0; i < 3; ++i) {
+//             const char* networkStatus = NetworkAnalysis::getNetworkStatus(const_cast<char*>(inputFilePaths[i]));
 
-            std::ofstream outputFile(outputFilePaths[i]);
-            if (outputFile.is_open()) {
-                outputFile << "Network status: " << networkStatus << '\n';
-                outputFile.close();
-                std::cout << "Connected items processed successfully for " << inputFilePaths[i] << ". Output written to " << outputFilePaths[i] << std::endl;
+//             std::ofstream outputFile(outputFilePaths[i]);
+//             if (outputFile.is_open()) {
+//                 outputFile << "Network status: " << networkStatus << '\n';
+//                 outputFile.close();
+//                 std::cout << "Connected items processed successfully for " << inputFilePaths[i] << ". Output written to " << outputFilePaths[i] << std::endl;
 
-                if (std::string(networkStatus) != std::string(expectedAnswers[i])) {
-                    std::cerr << "Error: Expected answer for " << inputFilePaths[i] << " is " << expectedAnswers[i] << ", but got " << networkStatus << std::endl;
-                }
-            } else {
-                std::cerr << "Error: Unable to open output file " << outputFilePaths[i] << std::endl;
-            }
-        }
-    } catch (const std::exception& e) {
-        std::cerr << "Error: " << e.what() << std::endl;
-    }
+//                 if (std::string(networkStatus) != std::string(expectedAnswers[i])) {
+//                     std::cerr << "Error: Expected answer for " << inputFilePaths[i] << " is " << expectedAnswers[i] << ", but got " << networkStatus << std::endl;
+//                 }
+//             } else {
+//                 std::cerr << "Error: Unable to open output file " << outputFilePaths[i] << std::endl;
+//             }
+//         }
+//     } catch (const std::exception& e) {
+//         std::cerr << "Error: " << e.what() << std::endl;
+//     }
 
-    return 0;
-}
+//     return 0;
+// }
